@@ -9,7 +9,7 @@ class SceneReader(object):
     def __init__(self, scene_name):
         parser = et.XMLParser(remove_blank_text=True)
         self.tree = et.parse(
-            "{0}/{1}/{1}S.xml".format(os.getcwd(), scene_name),
+            "{0}/output/{1}/{1}S.xml".format(os.getcwd(), scene_name),
             parser
         )
 

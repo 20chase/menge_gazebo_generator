@@ -140,13 +140,20 @@ class WorldGenerator(object):
 
         tree = et.ElementTree(sdf)
         tree.write(
-            "./{0}/{0}.world".format(self.scene_name), 
+            "./output/{0}/{0}.world".format(self.scene_name), 
             pretty_print=True, 
             xml_declaration=False
         )
 
 
 if __name__ == "__main__":
-    generator = WorldGenerator("CrossStreet")
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--scene_name", default="CrossStreet", type=str
+        )
+    args = parser.parse_args()
+    generator = WorldGenerator(args.scene_name)
+    print("Creating world file '%s/%s.world..." % (args.scene_name, args.scene_name))
     generator.generate()
 
