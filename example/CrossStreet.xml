@@ -1,0 +1,17 @@
+<Data>
+    <!-- Left Group -->
+    <Group speed="1" amount="150">
+
+        <Spawn min="0" max="0">
+            <Color r="0" g="0" b="255" />
+            <Transition to="0" chance="1" />
+        </Spawn>
+
+        <GoalSet capacity="10" min="10" max="10">
+            <Color r="255" g="0" b="0" />
+            <Transition to="0" chance="1" />
+        </GoalSet>
+        
+    </Group>
+
+</Data>
