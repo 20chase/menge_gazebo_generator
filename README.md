@@ -4,7 +4,7 @@
 
 Here is a example to use it. 
 ``` shell
-python main.py ./example/CrossStreet.xml
+python main.py ./example/CrossStreet.xml -r $RESOLUTION
 ```
 
 The result will be generated in output directory. 
