@@ -5,9 +5,11 @@ import numpy as np
 from lxml import etree as et
 from scene_reader import SceneReader
 
+from collections import OrderedDict
+
 
 class WorldGenerator(object):
-    def __init__(self, scene_name, resolution=0.1):
+    def __init__(self, scene_name, resolution=1.0):
         self.scene_name = scene_name
         self.resolution = resolution
 
@@ -19,27 +21,6 @@ class WorldGenerator(object):
         world = et.SubElement(
             sdf, "world", name="default"
         )
-
-        gravity = et.SubElement(world, "gravity")
-        gravity.text = "0 0 -0.98"
-
-        et.SubElement(
-            world, "atmosphere", type='adiabatic'
-        )
-        physics = et.SubElement(
-            world, "physics", 
-            name='default_physics',
-            default='0', 
-            type='ode'
-        )
-        max_step_size = et.SubElement(physics, "max_step_size")
-        max_step_size.text = "0.001"
-        
-        real_time_factor = et.SubElement(physics, "real_time_factor")
-        real_time_factor.text = "1"
-
-        real_time_update_rate = et.SubElement(physics, "real_time_update_rate")
-        real_time_update_rate.text = "1000"
 
         include = et.SubElement(world, "include")
         uri = et.SubElement(include, "uri")
@@ -112,7 +93,7 @@ class WorldGenerator(object):
             if i == 0:
                 pose = et.SubElement(scene, "pose", frame='')
                 pose.text = "{} {} 0 0 0 0".format(
-                    -self.resolution*geos[0], -self.resolution*geos[1]
+                    0, 0
                     )
                 continue
             scene = self.generate_wall(scene, i, geos)
@@ -120,8 +101,10 @@ class WorldGenerator(object):
         if write_plugin:
             plugin = et.SubElement(
                 world, "plugin", 
-                name="menge_plugin_randomized", 
-                filename="libmenge_plugin_randomized.so"
+                OrderedDict(
+                    [("name", "menge_plugin_randomized"), 
+                     ("filename", "libmenge_plugin_randomized.so")]
+                )
             )
             menge_root = et.SubElement(
                 plugin, "menge_root"
@@ -131,7 +114,7 @@ class WorldGenerator(object):
             menge_project_file = et.SubElement(
                 plugin, "menge_project_file"
                 )
-            menge_project_file.text = "example/" + self.scene_name + ".xml"
+            menge_project_file.text = "examples/scene/{0}/{0}.xml".format(self.scene_name)
 
             perception_distance = et.SubElement(
                 plugin, "perception_distance"
@@ -152,8 +135,11 @@ if __name__ == "__main__":
     parser.add_argument(
         "--scene_name", default="CrossStreet", type=str
         )
+    parser.add_argument(
+        "--plugin", action="store_true"
+    )
     args = parser.parse_args()
     generator = WorldGenerator(args.scene_name)
     print("Creating world file '%s/%s.world..." % (args.scene_name, args.scene_name))
-    generator.generate()
+    generator.generate(write_plugin=args.plugin)
 

@@ -14,8 +14,12 @@ class SceneReader(object):
         )
 
     def find_all_pts(self):
+        for i in range(len(self.tree.getroot().getchildren())):
+            if self.tree.getroot().getchildren()[i].tag == "ObstacleSet":
+                obst_idx = i
+                break
         all_pts = []
-        for obst in self.tree.getroot().getchildren()[8]:
+        for obst in self.tree.getroot().getchildren()[obst_idx]:
             pts = [
                 np.array(
                     [vertex.get("p_x"), vertex.get("p_y")], dtype=float
@@ -34,9 +38,16 @@ class SceneReader(object):
             height = abs(pts[2, 1] - pts[1, 1])
             all_geos.append(
                 [center[0], center[1], width, height]
+                # [pts[0, 0], pts[0, 1], width, height]
             )
         return all_geos
             
 if __name__ == "__main__":
-    reader = SceneReader("CrossStreet")
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--scene_name", default="CrossStreet", type=str
+        )
+    args = parser.parse_args()
+    reader = SceneReader(args.scene_name)
     print reader.run()
