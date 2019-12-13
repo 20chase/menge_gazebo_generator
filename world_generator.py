@@ -13,8 +13,8 @@ class WorldGenerator(object):
         self.scene_name = scene_name
         self.resolution = resolution
 
-        reader = SceneReader(self.scene_name)
-        self.all_geos = reader.run()
+        self.reader = SceneReader(self.scene_name)
+        self.all_geos = self.reader.run()
 
     def base_generate(self):
         sdf = et.Element("sdf", version="1.6")
@@ -127,6 +127,7 @@ class WorldGenerator(object):
             pretty_print=True, 
             xml_declaration=False
         )
+        self.reader.remove_obstacle_nodes()
 
 
 if __name__ == "__main__":
