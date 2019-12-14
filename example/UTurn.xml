@@ -1,5 +1,5 @@
 <Data>
-    <Group speed="1" amount="10">
+    <Group speed="1" amount="20">
 
         <Spawn min="0" max="0">
             <Color r="255" g="0" b="0" />
@@ -23,7 +23,7 @@
         
     </Group>
 
-    <Group speed="1" amount="10">
+    <Group speed="1" amount="20">
         <Spawn min="0" max="0">
             <Color r="254" g="0" b="0" />
             <Transition to="0" chance="1" />

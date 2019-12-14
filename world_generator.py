@@ -26,6 +26,10 @@ class WorldGenerator(object):
         uri = et.SubElement(include, "uri")
         uri.text = "model://sun"
 
+        include = et.SubElement(world, "include")
+        uri = et.SubElement(include, "uri")
+        uri.text = "model://ground_plane"
+
         return sdf, world
 
     def generate_wall(self, scene, idx, geos):
