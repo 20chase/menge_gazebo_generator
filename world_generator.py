@@ -131,7 +131,7 @@ class WorldGenerator(object):
             pretty_print=True, 
             xml_declaration=False
         )
-        self.reader.remove_obstacle_nodes()
+        # self.reader.remove_obstacle_nodes()
 
 
 if __name__ == "__main__":
