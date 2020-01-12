@@ -1,5 +1,11 @@
 # Menge Gazebo Generator
 
+## Install
+git clone include submodules
+``` shell
+git submodule update --init --recursive
+```
+
 ## Usage
 
 Here is a example to use it. 
