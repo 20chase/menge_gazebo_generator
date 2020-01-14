@@ -113,7 +113,7 @@ class WorldGenerator(object):
             menge_root = et.SubElement(
                 plugin, "menge_root"
                 )
-            menge_root.text = "/home/micrl/menge_ws/Menge"
+            menge_root.text = "{}/menge_ws/Menge".format(os.getenv("HOME"))
 
             menge_project_file = et.SubElement(
                 plugin, "menge_project_file"
