@@ -12,3 +12,7 @@ pedestrian number:
 resolution: width 200 height 50
 pedestrian number:
 
+## SmallPark
+
+resolution: width 200 height 200
+
