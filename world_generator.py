@@ -101,6 +101,11 @@ class WorldGenerator(object):
                     )
                 continue
             scene = self.generate_wall(scene, i, geos)
+        
+        self_collide = et.SubElement(scene, "self_collide")
+        self_collide.text = "0"
+        enable_wind = et.SubElement(scene, "enable_wind")
+        enable_wind.text = "0"
 
         if write_plugin:
             plugin = et.SubElement(
@@ -124,6 +129,29 @@ class WorldGenerator(object):
                 plugin, "perception_distance"
                 )
             perception_distance.text = "5.0"
+
+        physics = et.SubElement(
+            world, "physics", 
+            OrderedDict(
+                [("name", "default_physics"), 
+                ("default", "0"), 
+                ("type", "ode")]
+                )
+            )
+        max_step_size = et.SubElement(
+            physics, "max_step_size"
+        )
+        max_step_size.text = "0.01"
+        
+        real_time_factor = et.SubElement(
+            physics, "real_time_factor"
+        )
+        real_time_factor.text = "1"
+
+        real_time_update_rate = et.SubElement(
+            physics, "real_time_update_rate"
+        )
+        real_time_update_rate.text = "100"
 
         tree = et.ElementTree(sdf)
         tree.write(
