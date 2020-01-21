@@ -1,0 +1,188 @@
+<Data>
+    <Group speed="1" amount="250">
+        <Spawn min="0" max="0">
+            <Color r="255" g="0" b="0" />
+            <Transition to="0" chance="1.0" />
+        </Spawn>
+        <!-- 0 -->
+        <GoalSet capacity="20" min="10" max="10"> 
+            <Color r="254" g="0" b="0" />
+            <Transition to="1" chance="1.0" />
+        </GoalSet>
+        <!-- 1 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="253" g="0" b="0" />
+            <Transition to="2" chance="0.3" />
+            <Transition to="27" chance="0.7" />
+        </GoalSet>
+        <!-- 2 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="252" g="0" b="0" />
+            <Transition to="26" chance="1.0" />
+        </GoalSet>
+        <!-- 3 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="251" g="0" b="0" />
+            <Transition to="4" chance="1.0" />
+            <Transition to="5" chance="1.0" />
+        </GoalSet>
+        <!-- 4 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="229" g="0" b="0" />
+            <Transition to="4" chance="0.7" />
+            <Transition to="25" chance="0.4" />
+        </GoalSet>
+        <!-- 5 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="249" g="0" b="0" />
+            <Transition to="30" chance="1.0" />
+            <Transition to="7" chance="1.0" />
+        </GoalSet>
+        <!-- 6 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="248" g="0" b="0" />
+            <Transition to="8" chance="0.5" />
+            <Transition to="12" chance="0.5" />
+        </GoalSet>
+        <!-- 7 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="247" g="0" b="0" />
+            <Transition to="8" chance="0.5" />
+            <Transition to="12" chance="0.5" />
+        </GoalSet>
+        <!-- 8 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="246" g="0" b="0" />
+            <Transition to="10" chance="1.0" />
+        </GoalSet>
+        <!-- 9 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="236" g="0" b="0" />
+            <Transition to="8" chance="0.5" />
+            <Transition to="13" chance="0.5" />
+            <Transition to="14" chance="0.5" />
+        </GoalSet>
+        <!-- 10 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="245" g="0" b="0" />
+            <Transition to="11" chance="1.0" />
+        </GoalSet>
+        <!-- 11 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="244" g="0" b="0" />
+            <Transition to="12" chance="1.0" />
+        </GoalSet>
+        <!-- 12 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="243" g="0" b="0" />
+            <Transition to="13" chance="0.35" />
+            <Transition to="14" chance="0.35" />
+            <Transition to="20" chance="0.3" />
+        </GoalSet>
+        <!-- 13 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="232" g="0" b="0" />
+            <Transition to="31" chance="1.0" />
+        </GoalSet>
+        <!-- 14 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="231" g="0" b="0" />
+            <Transition to="15" chance="1.0" />
+        </GoalSet>
+        <!-- 15 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="230" g="0" b="0" />
+            <Transition to="4" chance="1.0" />
+        </GoalSet>
+        <!-- 16 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="241" g="0" b="0" />
+            <Transition to="17" chance="1.0" />
+        </GoalSet>
+        <!-- 17 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="240" g="0" b="0" />
+            <Transition to="32" chance="1.0" />
+        </GoalSet>
+        <!-- 18 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="239" g="0" b="0" />
+            <Transition to="19" chance="1.0" />
+        </GoalSet>
+        <!-- 19 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="238" g="0" b="0" />
+            <Transition to="19" chance="1.0" />
+        </GoalSet>
+        <!-- 20 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="242" g="0" b="0" />
+            <Transition to="29" chance="1.0" />
+        </GoalSet>
+        <!-- 21 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="235" g="0" b="0" />
+            <Transition to="22" chance="1.0" />
+        </GoalSet>
+        <!-- 22 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="234" g="0" b="0" />
+            <Transition to="23" chance="1.0" />
+        </GoalSet>
+        <!-- 23 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="233" g="0" b="0" />
+            <Transition to="12" chance="0.3" />
+            <Transition to="13" chance="0.35" />
+            <Transition to="14" chance="0.35" />
+        </GoalSet>
+        <!-- 24 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="237" g="0" b="0" />
+            <Transition to="9" chance="1.0" />
+        </GoalSet>
+        <!-- 25 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="228" g="0" b="0" />
+            <Transition to="5" chance="1.0" />
+        </GoalSet>
+        <!-- 26 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="227" g="0" b="0" />
+            <Transition to="3" chance="1.0" />
+        </GoalSet>
+        <!-- 27 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="250" g="0" b="0" />
+            <Transition to="5" chance=".5" />
+            <Transition to="28" chance=".5" />
+        </GoalSet>
+        <!-- 28 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="226" g="0" b="0" />
+            <Transition to="24" chance="1.0" />
+        </GoalSet>
+        <!-- 29 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="225" g="0" b="0" />
+            <Transition to="16" chance="1.0" />
+        </GoalSet>
+        <!-- 30 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="224" g="0" b="0" />
+            <Transition to="6" chance="1.0" />
+        </GoalSet>
+        <!-- 31 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="223" g="0" b="0" />
+            <Transition to="15" chance="1.0" />
+        </GoalSet>
+        <!-- 32 -->
+        <GoalSet capacity="20" min="10" max="10">
+            <Color r="222" g="0" b="0" />
+            <Transition to="18" chance="1.0" />
+        </GoalSet>
+    </Group>
+
+
+</Data>
